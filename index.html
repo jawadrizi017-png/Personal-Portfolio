@@ -1,1 +1,509 @@
-<p>Hello jawad</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jawad Rizwan - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(10, 10, 10, 0.95);
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .logo span {
+            color: #ff0040;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff0040;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 100px;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-content h2 {
+            font-size: 24px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h1 {
+            font-size: 72px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 span {
+            color: #ff0040;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #ff0040;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #cc0033;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 0, 64, 0.3);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ff0040;
+            box-shadow: 0 0 50px rgba(255, 0, 64, 0.3);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 100px;
+            min-height: 100vh;
+        }
+
+        .section-title {
+            font-size: 48px;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .section-title span {
+            color: #ff0040;
+        }
+
+        /* About Section */
+        #about {
+            background-color: #111;
+        }
+
+        .about-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            line-height: 1.8;
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        /* Education Section */
+        #education {
+            background-color: #0a0a0a;
+        }
+
+        .education-grid {
+            display: grid;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #ff0040;
+        }
+
+        .education-item h3 {
+            color: #ff0040;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .education-item p {
+            color: #aaa;
+            margin: 5px 0;
+        }
+
+        /* Skills Section */
+        #skills {
+            background-color: #111;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skill-category {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 0, 64, 0.2);
+        }
+
+        .skill-category h3 {
+            color: #ff0040;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .skill-category ul {
+            list-style: none;
+            color: #ccc;
+        }
+
+        .skill-category ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: #0a0a0a;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background-color: #1a1a1a;
+            padding: 30px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 0, 64, 0.2);
+        }
+
+        .project-card h3 {
+            color: #ff0040;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .project-card p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #111;
+            text-align: center;
+        }
+
+        .contact-info {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            background-color: #1a1a1a;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            font-size: 18px;
+        }
+
+        .contact-item a {
+            color: #ff0040;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 20px;
+            }
+
+            nav ul {
+                gap: 20px;
+                font-size: 14px;
+            }
+
+            .hero {
+                flex-direction: column;
+                padding: 100px 20px;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 48px;
+            }
+
+            .hero-image img {
+                width: 300px;
+                height: 300px;
+            }
+
+            section {
+                padding: 50px 20px;
+            }
+
+            .section-title {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo"><span>J</span>awad.</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>BS English Student & Aspiring Developer</h2>
+            <h1>Hi, I'm <span>Jawad</span><br>From Pakistan</h1>
+            <p>Passionate about AI/ML, Web Development & Game Design</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/file.enc" alt="Profile">
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-content">
+            <p>I'm a motivated and detail-oriented BS English student at the University of Lahore with a strong interest in programming, AI/ML, and technology. I'm seeking opportunities to apply creative, analytical, and coding skills in a professional environment focused on innovation, digital media, and artificial intelligence.</p>
+            <br>
+            <p>My journey combines my passion for language and literature with cutting-edge technology, allowing me to bridge communication and technical skills effectively.</p>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title">My <span>Education</span></h2>
+        <div class="education-grid">
+            <div class="education-item">
+                <h3>University of Lahore</h3>
+                <p><strong>Bachelor of Science in English Language and Literature</strong></p>
+                <p>Expected Graduation: 2027</p>
+                <p>Lahore, Pakistan</p>
+            </div>
+            <div class="education-item">
+                <h3>Unique College, Shahdara</h3>
+                <p><strong>Intermediate (Pre-Engineering)</strong></p>
+                <p>Bise Lahore</p>
+                <p>Completed</p>
+            </div>
+            <div class="education-item">
+                <h3>Dar-e-Arqam School</h3>
+                <p><strong>Matriculation</strong></p>
+                <p>Bise Lahore</p>
+                <p>Completed</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">Technical <span>Skills</span></h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Programming Languages</h3>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>Java</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>AI/ML Skills</h3>
+                <ul>
+                    <li>Data Handling</li>
+                    <li>Model Training</li>
+                    <li>Automation Tools</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Web Development</h3>
+                <ul>
+                    <li>Front-end Design</li>
+                    <li>Responsive Page Building</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Platforms</h3>
+                <ul>
+                    <li>Visual Studio Code</li>
+                    <li>GitHub</li>
+                    <li>Canva</li>
+                    <li>Google Workspace</li>
+                    <li>Firebase</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Other Skills</h3>
+                <ul>
+                    <li>Video Editing</li>
+                    <li>Basic Trading Knowledge</li>
+                    <li>MS Office Suite</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">My <span>Projects</span></h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Jarvis AI Assistant</h3>
+                <p>Built an AI-based voice assistant capable of responding to commands, performing tasks, and giving basic responses using Python and machine learning libraries.</p>
+            </div>
+            <div class="project-card">
+                <h3>Game Development</h3>
+                <p>Created small interactive games using Python logic and libraries, demonstrating problem-solving and creative coding skills.</p>
+            </div>
+            <div class="project-card">
+                <h3>Calculator App</h3>
+                <p>Developed a simple yet functional calculator application using Python, showcasing fundamental programming skills.</p>
+            </div>
+            <div class="project-card">
+                <h3>Personal Portfolio Website</h3>
+                <p>Designed a responsive portfolio website using HTML, CSS, and JavaScript to showcase skills and projects professionally.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <strong>Email:</strong> <a href="mailto:jawadrizi017@gmail.com">jawadrizi017@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <strong>Phone:</strong> <a href="tel:03278144607">+923278144607 <p>For what's App</p></a>
+            </div>
+            <div class="contact-item">
+                <strong>Location:</strong>  Lahore, Pakistan
+            </div>
+            <div class="contact-item">
+                <strong>Languages:</strong> English (Fluent), Urdu (Native), Punjabi (Conversational)
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.padding = '15px 50px';
+            } else {
+                nav.style.padding = '20px 50px';
+            }
+        });
+    </script>
+</body>
+</html>
